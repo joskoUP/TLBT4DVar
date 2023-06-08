@@ -479,14 +479,14 @@ for k = 1:length(r)
     ZP = [Z(vecdiff,:)]; % unobserved variable
     ZP_MOR = [Z_MOR(vecdiff,:)];
     ZP_MOR_a = [Z_MOR_a(vecdiff,:)];
-    semilogy(xvals,sqrt(sum(ZS.*ZS,1)),'color',[0.7,0,0],'LineWidth',2);
+    semilogy(xvals,sqrt(sum(ZS.*ZS,1)),'color',[0.7,0,0],'LineStyle','-.','LineWidth',2);
     hold on
     legend('observed, full',Location='best')
+    semilogy(xvals,sqrt(sum(ZS_MOR_a.*ZS_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','x','DisplayName',['observed, alpha-BT, r = ', num2str(r(k))]);
     semilogy(xvals,sqrt(sum(ZS_MOR.*ZS_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineWidth',2,'DisplayName',['observed, TLBT, r = ', num2str(r(k))]);
-    semilogy(xvals,sqrt(sum(ZS_MOR_a.*ZS_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','x','LineWidth',1,'DisplayName',['observed, alpha-BT, r = ', num2str(r(k))]);
-    semilogy(xvals,sqrt(sum(ZP.*ZP,1)),'color',[0.7,0,0],'LineStyle','--' ,'LineWidth',2,'DisplayName','unobserved, full');
+    semilogy(xvals,sqrt(sum(ZP.*ZP,1)),'color',[0.7,0,0],'LineStyle',':' ,'LineWidth',2,'DisplayName','unobserved, full');
+    semilogy(xvals,sqrt(sum(ZP_MOR_a.*ZP_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','o','LineStyle','--','DisplayName',['unobserved, alpha-BT, r = ', num2str(r(k))]);
     semilogy(xvals,sqrt(sum(ZP_MOR.*ZP_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineStyle','--','LineWidth',2,'DisplayName',['unobserved, TLBT, r = ', num2str(r(k))]);
-    semilogy(xvals,sqrt(sum(ZP_MOR_a.*ZP_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','x','LineStyle','--','LineWidth',1,'DisplayName',['unobserved, alpha-BT, r = ', num2str(r(k))]);
     title('RMS errors in observed and unobserved variables')
 
     % calculate final x_1 error
