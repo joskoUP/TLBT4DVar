@@ -11,9 +11,9 @@ The work in [1] applies time-limited balanced truncation within the inner loop o
 [https://github.com/elizqian/balancing-bayesian-inference](https://github.com/elizqian/balancing-bayesian-inference)) allow to simplify the problem and use a Quasi-Newton minimisation with a constant Hessian.
 
 ## Examples
-To generate the plots comparing the full incremental 4D-Var method to time-limited balanced truncation and $\alpha$-bounded balanced truncation, run the Comparison_lorenzN_4dvar.m script, with the choice of observation points and prior covariance as described.
-* Figure 1: Observations in all N variables, prior covariance matrix Gaussian exponential.
-* Figure 2: Observations every s points, prior covariance matrix scaled identity.
+To generate the plots comparing the full incremental 4D-Var method to time-limited balanced truncation and $\alpha$-bounded balanced truncation, run the **Comparison_lorenzN_4dvar.m** script. There will be a pop-up menu. Choose the observation points and prior covariance as follows:
+* Figure 1: Observations _in all N variables_, prior covariance matrix _Gaussian exponential_.
+* Figure 2: Observations _every s points_, prior covariance matrix _scaled identity_.
 
 ## References
 2. König, J., Freitag, M. "Time-limited Balanced Truncation for Data Assimilation Problems" [arXiv](https://arxiv.org/abs/2212.07719) (submitted, under review).

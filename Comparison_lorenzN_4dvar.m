@@ -43,7 +43,7 @@ N       = 500;
 guessXtruth = randn(N,1);
 
 % choice of observed points
-choice = menu('Choose observations','In all N variables','every s variables');
+choice = menu('Choose observation points','In all N variables','Every s points');
 if choice == 1
     % observation matrix is constant and identity
     H           = speye(N);
@@ -51,7 +51,7 @@ if choice == 1
     obs_vars    = N;
     last_ind    = N;
 else
-    s   = input('Take observations every ... variables. ');
+    s   = input('Take observations every ... points. ');
     obs_vars    = ceil(N/s);
     H           = zeros(obs_vars,N);
     for i = 1:obs_vars
@@ -62,7 +62,7 @@ else
 end
 
 % Choice of prior covariance matrix
-choiceB = menu('Covariance matrix','Scaled Identity','Gaussian exponential');
+choiceB = menu('Prior covariance matrix','Scaled Identity','Gaussian exponential');
 sb = 0.1;
 if choiceB == 1
     % Identity
@@ -457,11 +457,11 @@ for k = 1:length(r)
     clear Z Z_MOR Z1 Z2 Z1_MOR Z2_MOR
     Z = Xfinal(:,:)-Xtruth(:,:);
     Z_MOR = Xfinal_MOR(:,:)-Xtruth(:,:);
-    semilogy(xvals,sqrt(sum(Z_MOR.*Z_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineWidth',2,'DisplayName',['after assim., TLBT, r = ', num2str(r(k))]);
+    semilogy(xvals,sqrt(sum(Z_MOR.*Z_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineStyle','-.','LineWidth',3,'DisplayName',['after assim., TLBT, r = ', num2str(r(k))]);
     Z_MOR_a = Xfinal_MOR_a(:,:)-Xtruth(:,:);
     semilogy(xvals,sqrt(sum(Z_MOR_a.*Z_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','x','DisplayName',['after assim., alpha-BT, r = ', num2str(r(k))]);
     if k == length(r)
-        semilogy(xvals,sqrt(sum(Z.*Z,1)),'color',[0.7,0,0],'LineStyle','-.','LineWidth',2,'DisplayName','after assim.');
+        semilogy(xvals,sqrt(sum(Z.*Z,1)),'color',[0.7,0,0],'LineWidth',2,'DisplayName','after assim.');
         % plot vertical line at beginning of forecast
         yL = get(gca,'YLim');
         line([tstep_assi tstep_assi],yL,'Color','k','DisplayName','end of assimilation window');
@@ -479,14 +479,14 @@ for k = 1:length(r)
     ZP = [Z(vecdiff,:)]; % unobserved variable
     ZP_MOR = [Z_MOR(vecdiff,:)];
     ZP_MOR_a = [Z_MOR_a(vecdiff,:)];
-    semilogy(xvals,sqrt(sum(ZS.*ZS,1)),'color',[0.7,0,0],'LineStyle','-.','LineWidth',2);
+    semilogy(xvals,sqrt(sum(ZS.*ZS,1)),'color',[0.7,0,0],'LineWidth',2);
     hold on
     legend('observed, full',Location='best')
     semilogy(xvals,sqrt(sum(ZS_MOR_a.*ZS_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','x','DisplayName',['observed, alpha-BT, r = ', num2str(r(k))]);
-    semilogy(xvals,sqrt(sum(ZS_MOR.*ZS_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineWidth',2,'DisplayName',['observed, TLBT, r = ', num2str(r(k))]);
+    semilogy(xvals,sqrt(sum(ZS_MOR.*ZS_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineStyle','-.','LineWidth',3,'DisplayName',['observed, TLBT, r = ', num2str(r(k))]);
     semilogy(xvals,sqrt(sum(ZP.*ZP,1)),'color',[0.7,0,0],'LineStyle',':' ,'LineWidth',2,'DisplayName','unobserved, full');
     semilogy(xvals,sqrt(sum(ZP_MOR_a.*ZP_MOR_a,1)),'color',[0.6*(k-1)/length(r), 0.6/k,0],'Marker','o','LineStyle','--','DisplayName',['unobserved, alpha-BT, r = ', num2str(r(k))]);
-    semilogy(xvals,sqrt(sum(ZP_MOR.*ZP_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineStyle','--','LineWidth',2,'DisplayName',['unobserved, TLBT, r = ', num2str(r(k))]);
+    semilogy(xvals,sqrt(sum(ZP_MOR.*ZP_MOR,1)),'color',[0,0.6*(k-1)/length(r), 0.6/k],'LineStyle','--','LineWidth',3,'DisplayName',['unobserved, TLBT, r = ', num2str(r(k))]);
     title('RMS errors in observed and unobserved variables')
 
     % calculate final x_1 error
