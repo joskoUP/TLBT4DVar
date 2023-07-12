@@ -1,4 +1,4 @@
-# Time-limited Balanced Truncation inside Incremental Four-Dimensional Variational Data Assimilation
+# Time-limited Balanced Truncation within Incremental Four-Dimensional Variational Data Assimilation
 
 This MATLAB repository contains code for the numerical results of the following paper:
 
@@ -11,7 +11,10 @@ The work in [1] applies time-limited balanced truncation within the inner loop o
 [https://github.com/elizqian/balancing-bayesian-inference](https://github.com/elizqian/balancing-bayesian-inference)) allow to simplify the problem and use a Quasi-Newton minimisation with a constant Hessian.
 
 ## Examples
-To generate the plots comparing the full incremental 4D-Var method to time-limited balanced truncation and $\alpha$-bounded balanced truncation, run the **Comparison_lorenzN_4dvar.m** script. There will be a pop-up menu. Choose the observation points and prior covariance as follows:
+To run this code, you need the MATLAB Control System Toolbox.
+
+To generate the plots comparing the full incremental 4D-Var method to time-limited balanced truncation and $\alpha$-bounded balanced truncation, run the **Comparison_lorenzN_4dvar.m** script.<br />
+There will be a pop-up menu. Choose the observation points and prior covariance as follows:
 * Figure 1: Observations _in all N variables_, prior covariance matrix _Gaussian exponential_.
 * Figure 2: Observations _every s points_, prior covariance matrix _scaled identity_.
 
