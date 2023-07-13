@@ -16,7 +16,7 @@ To run this code, you need the MATLAB Control System Toolbox.
 To generate the plots comparing the full incremental 4D-Var method to time-limited balanced truncation and $\alpha$-bounded balanced truncation, run the **Comparison_lorenzN_4dvar.m** script.<br />
 There will be a pop-up menu. Choose the observation points and prior covariance as follows:
 * Figure 1: Observations _in all N variables_, prior covariance matrix _Gaussian exponential_.
-* Figure 2: Observations _every s points_, prior covariance matrix _scaled identity_.
+* Figure 2: Observations _every s = 9 points_, prior covariance matrix _scaled identity_.
 
 ## References
 2. König, J., Freitag, M. "Time-limited Balanced Truncation for Data Assimilation Problems" [arXiv](https://arxiv.org/abs/2212.07719) (submitted, under review).
