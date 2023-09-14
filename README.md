@@ -2,8 +2,7 @@
 
 This MATLAB repository contains code for the numerical results of the following paper:
 
-1. König, J., Freitag, M. A. "Time-limited Balanced Truncation within Incremental Four-Dimensional Variational Data Assimilation" (submitted, under review).
-
+1.  König, J. & Freitag, M. A. "[Time-limited balanced truncation within incremental four-dimensional variational data assimilation](https://onlinelibrary.wiley.com/doi/10.1002/pamm.202300019)". Proceedings in Applied Mathematics and Mechanics, e202300019 (2023).
 
 ## Summary
 The work in [1] applies time-limited balanced truncation within the inner loop of incremental four-dimensional variational data assimilation. Results and code for (time-limited) balanced truncation for Bayesian inference from [2] (to be found at
@@ -19,8 +18,8 @@ There will be a pop-up menu. Choose the observation points and prior covariance 
 * Figure 2: Observations _every s points_, in command window: `Take observations every ... points.` - enter _9_, prior covariance matrix _scaled identity_.
 
 ## References
-2. König, J., Freitag, M. "Time-limited Balanced Truncation for Data Assimilation Problems" [arXiv](https://arxiv.org/abs/2212.07719) (submitted, under review).
-3. Qian, E., Tabeart, J. M., Beattie, C., Gugercin, S., Jiang, J., Kramer, P. R., and Narayan, A.
+2. König, J. & Freitag, M. "Time-limited Balanced Truncation for Data Assimilation Problems" [arXiv](https://arxiv.org/abs/2212.07719) (accepted for Journal of Scientific Computing).
+3. Qian, E., Tabeart, J. M., Beattie, C., Gugercin, S., Jiang, J., Kramer, P. R., & Narayan, A.
 "[Model reduction for linear dynamical systems via balancing for Bayesian inference](https://link.springer.com/article/10.1007/s10915-022-01798-8)." Journal of Scientific Computing 91.29 (2022).
 
 ### Contact
