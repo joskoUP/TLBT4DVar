@@ -18,7 +18,7 @@ There will be a pop-up menu. Choose the observation points and prior covariance 
 * Figure 2: Observations _every s points_, in command window: `Take observations every ... points.` - enter _9_, prior covariance matrix _scaled identity_.
 
 ## References
-2. König, J. & Freitag, M. "Time-limited Balanced Truncation for Data Assimilation Problems" [arXiv](https://arxiv.org/abs/2212.07719) (accepted for Journal of Scientific Computing).
+2. König, J., Freitag, M. A. "[Time-limited Balanced Truncation for Data Assimilation Problems](https://link.springer.com/article/10.1007/s10915-023-02358-4)." Journal of Scientific Computing 97.47 (2023).
 3. Qian, E., Tabeart, J. M., Beattie, C., Gugercin, S., Jiang, J., Kramer, P. R., & Narayan, A.
 "[Model reduction for linear dynamical systems via balancing for Bayesian inference](https://link.springer.com/article/10.1007/s10915-022-01798-8)." Journal of Scientific Computing 91.29 (2022).
 
